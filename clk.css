@@ -1,0 +1,147 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+}
+body{
+	border: 1px solid black;
+	height: 100vh ;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: black;
+}
+.clkcont{
+	border: 1px solid black;
+	position: relative;
+}
+.clok{
+	border: 1px solid black;
+	height: 250px;
+	width: 250px;
+	border-radius: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	background: dimgray;
+	background: transparent ;
+	color: white;
+	backdrop-filter: blur(10px);
+}
+.num{
+	position: absolute;
+	inset: 10px;
+	text-align: center;
+	transform: rotate(calc(30deg * var(--i)));
+}
+.nonum>b{
+	font-weight:bold ;
+	font-size: 10px;
+  
+	
+
+}
+.num>b{
+	display: inline-block;
+	transform: rotate(calc(-3deg *var(--i)));
+border: 1px solid black;
+	
+}
+.clkindi{
+	position: absolute;
+/*	border: 1px solid white;*/
+	inset: 0;
+	display: flex;
+	justify-content: center;
+
+}
+.clkindi >div{
+/*	background-color: black;*/
+	width: 3px;
+	height: 50%;
+	transform-origin:bottom ;
+	display: block;
+	box-shadow: 0px 30px 0px white;
+}
+#h>div{
+	transform: scaleY(.4);
+}
+#m>div{
+	transform: scaleY(.3);
+}
+#s>div{
+	transform: scaleY(.1);
+}
+
+
+.sp1{
+	position: absolute;
+/*	border: 1px solid white;*/
+	height:120px ;
+	width:120px ;
+	background-color: greenyellow;
+	left: -45px;
+	top: -45px;
+	border-radius: 100%;
+
+
+}
+.sp2{
+	position: absolute;
+/*	border: 1px solid white;*/
+	height:120px ;
+	width:120px ;
+	background-color:darkred;
+	left: 175px;
+	bottom: -45px;
+	border-radius: 100%;
+	
+}
+.cen{
+	width: 10px;
+	height: 10px;
+	background-color: white;
+	border-radius: 100%;
+
+}
+.button{
+	border: 1px solid white;
+	width: 50px;
+	height: 20px;
+	border-radius: 20px;
+	background-color: lightgray;
+    cursor: pointer;
+}
+.button::before{
+	content: '';
+	display: block;
+	background-color: yellow;
+	height: 20px;
+	width: 20px;
+	border-radius: 100%;
+	position: absolute;
+	left: 2px;
+	box-shadow: 2px 5px 10px black;
+	transition: 1s all ease;
+}
+
+.active .button::before{
+  transform: translateX(25px);
+}
+.active{
+	background-color: white;
+}
+.active.button
+{
+	background-color: gray;
+}
+.active .sp2{
+	background-color: blue;
+}
+.active .sp1{
+	background-color: yellowgreen;
+}
+.active .clok{
+	background-color: rgba(0, 0, 0, 0.2);
+}
